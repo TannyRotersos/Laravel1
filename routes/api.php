@@ -18,10 +18,11 @@ Route::middleware('auth:api')->get('/user', function (Request $request) {
 });
 
 Route::get('todos', function(){
-	return todos::all();
+	return Todo::all();
 })->middleware('auth:api');
 
 Route::get('todos', 'TodosController@index');
+
 
 //Route::get('todos', ['middleware' => 'auth.basic', function()
 //{
